@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Alarm : MonoBehaviour
 {
-    Light L;
+    public Light L;
 
     // Start is called before the first frame update
     void Start()
@@ -15,18 +15,18 @@ public class Alarm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        L = GetComponent<Light>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        L = other.GetComponent<Light>();
+        //L = other.GetComponent<Light>();
         L.intensity = Mathf.Lerp(1,2, 2 * Time.deltaTime);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        L = other.GetComponent<Light>();
+        //L = other.GetComponent<Light>();
         L.intensity = 0;
     }
 }

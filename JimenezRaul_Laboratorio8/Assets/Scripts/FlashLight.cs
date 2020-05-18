@@ -30,22 +30,7 @@ public class FlashLight : MonoBehaviour
                 audioSource.PlayOneShot(boton);
                 light.enabled = true;
             }
-            //active = !active;
-            //this.gameObject.SetActive(active);
-            //audioSource.PlayOneShot(boton);
-            //gameObject.SetActive(!gameObject.activeInHierarchy);
-            //if (act == true)
-            //{
-            //    this.gameObject.SetActive(false);
-            //    audioSource.PlayOneShot(boton);
-            //    act = false;
-            //}
-            //if (act == false)
-            //{
-            //    this.gameObject.SetActive(true);
-            //    audioSource.PlayOneShot(boton);
-            //    act = true;
-            //}
+            
         }
     }
 }
