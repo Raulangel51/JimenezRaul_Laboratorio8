@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class Alarm : MonoBehaviour
 {
-    public Light L;
+    public Light light1;
+    public Light light2;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //L = GetComponent<Light>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        L = GetComponent<Light>();
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //L = other.GetComponent<Light>();
-        L.intensity = Mathf.Lerp(1,2, 2 * Time.deltaTime);
+        light1.intensity = Mathf.Sin(Time.time);
+        light2.intensity = Mathf.Sin(Time.time);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        light1.intensity = Mathf.Sin(Time.time) + 0.5f;
+        light2.intensity = Mathf.Sin(Time.time) + 0.5f;
     }
 
     private void OnTriggerExit(Collider other)
     {
         //L = other.GetComponent<Light>();
-        L.intensity = 0;
+        light1.intensity = 0;
+        light2.intensity = 0;
     }
 }
